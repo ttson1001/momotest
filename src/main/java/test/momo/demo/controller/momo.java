@@ -14,7 +14,7 @@ import test.momo.demo.shared.utils.LogUtils;
 public class momo {
 
     @PostMapping("/create")
-    public ResponseEntity<PaymentResponse> aBoolean (){
+    public ResponseEntity<String> aBoolean (){
         LogUtils.init();
         String requestId = String.valueOf(System.currentTimeMillis());
         String orderId = String.valueOf(System.currentTimeMillis());
@@ -43,6 +43,6 @@ public class momo {
              e.printStackTrace();
         }
 
-        return ResponseEntity.ok().body(captureWalletMoMoResponse);
+        return ResponseEntity.ok().body(captureWalletMoMoResponse.getPayUrl());
     }
 }
